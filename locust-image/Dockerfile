@@ -14,7 +14,7 @@
 
 
 # Start with a base Python 2.7 alpine image
-FROM python:2.7-alpine
+FROM python:3.7-alpine3.7
 
 COPY requirements.txt requirements.txt
 RUN apk --no-cache add --virtual=.build-dep \
@@ -33,4 +33,4 @@ RUN chmod 755 /entrypoint.sh
 EXPOSE 5557 5558 8089
 
 # Start Locust using LOCUS_OPTS environment variable
-ENTRYPOINT ["/entrypoint.sh"] 
+ENTRYPOINT ["/entrypoint.sh"]
